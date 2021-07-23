@@ -76,5 +76,5 @@ maintain integrity for ExpressionParser and Calculator contract.
  Program will start from "Running example"
  Else program will terminate
  
-#### No testing bundle, on command line applications
+## No testing bundle, on command line applications
 Since this app solely developed on comand line without involving MAC app or iOS app, the Unit testing build wont import App files, which will give error on test cases 
