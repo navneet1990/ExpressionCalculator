@@ -63,7 +63,8 @@ maintain integrity for ExpressionParser and Calculator contract.
 1. Just change target scheme to `ExpressionCalculatorInConsole`
 2. For Console without launch arguments, open `edit scheme` change the `Build Configuration` to `Debug`
 3. For Console with launch arguments, open `edit scheme` change the `Build Configuration` to `Debug console`
-4. Hit run then
+4. Note on console, must add parenthesis manually otherwise compiler wont read the closing parenthesis
+5. Hit run then
 
  ## Running Example
  1. Please enter your expression
