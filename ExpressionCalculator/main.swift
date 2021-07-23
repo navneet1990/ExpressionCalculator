@@ -21,6 +21,7 @@ func begin() {
         var input: String
         if let arguments = initialArguments {
             input = arguments
+            print(arguments)
         } else {
             print("Please enter your expression")
             input = getInput()
