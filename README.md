@@ -57,6 +57,7 @@ maintain integrity for ExpressionParser and Calculator contract.
 1. Navigate to the project folder `/.../ExpressionCalculator/bin`   on the terminal
 2. Run the command  by typing in `./ExpressionCalculator`
 3. Make sure to build first on Xcode, every time any modification made in code
+4. If executable in bin doesnt run, then build from Xcode, this is because due to your system securtiy apply wont permit to run downloaded app executable file
 
 ## Read default Arguments or in Console
 1. Just change target scheme to `ExpressionCalculatorInConsole`
