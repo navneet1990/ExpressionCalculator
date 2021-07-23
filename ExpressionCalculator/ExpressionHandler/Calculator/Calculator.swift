@@ -21,6 +21,14 @@ final class Calculator {
     }
 
     // MARK:- Public methods
+    func addUpdateOperation(operator symbol: String,
+                            operation: Operation) {
+        if let _ = operationMap[symbol] {
+            operationMap[symbol] = operation
+        } else {
+            operationMap[symbol] = operation
+        }
+    }
 
     func calculate(operator symbol: String,
                    firstOperand lhs: Int,

@@ -8,8 +8,7 @@
 import Foundation
 
 func begin() {
-
-    let cal = ExpressionHandler()
+    let calculator = ExpressionHandler()
 
     var initialArguments: String?
     #if CONSOLE
@@ -26,7 +25,7 @@ func begin() {
             print("Please enter your expression")
             input = getInput()
         }
-        let result = cal.processInput(input)
+        let result = calculator.processInput(input)
         print(result)
         if initialArguments != nil {
             initialArguments = nil
