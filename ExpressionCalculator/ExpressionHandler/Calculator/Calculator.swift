@@ -21,6 +21,9 @@ final class Calculator {
     }
 
     // MARK:- Public methods
+    /*
+     Add or update new SIGN and operation of instance of this class
+     **/
     func addUpdateOperation(operator symbol: String,
                             operation: Operation) {
         if let _ = operationMap[symbol] {
@@ -30,6 +33,9 @@ final class Calculator {
         }
     }
 
+    /*
+     From mapped operation based upon symbol, actual calculation will be performed
+     **/
     func calculate(operator symbol: String,
                    firstOperand lhs: Int,
                    secondOperand rhs: Int) -> Int? {

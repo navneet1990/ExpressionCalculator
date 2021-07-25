@@ -20,6 +20,9 @@ class Tree {
         return root
     }
 
+    /*
+    Tree data structure will construct the tree from operators,tokens. This is improve the performance of parsing large expression with mutiple operators and operands
+     **/
     func contructATree(tokens: [String],
                        operatorSymbols: Set<String>,
                        beginExp: String,

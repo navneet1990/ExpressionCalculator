@@ -19,6 +19,9 @@ final class ExpressionHandler {
     }
     
     // MARK:- Public methods
+    /* Process input string
+     Here input will be passed as a string for the evaluation of expression
+     **/
     func processInput(_ input: String) -> String {
         evaluateExpression(for: input)
     }
@@ -29,6 +32,7 @@ private extension ExpressionHandler {
     
     func evaluateExpression(for input: String) -> String {
         do {
+            // Validate if input string is valid expression or no
             guard isValidExpression(content: input) else  {
                 let text = try input.intValue()
                 return text
@@ -36,7 +40,8 @@ private extension ExpressionHandler {
             
             let wordToSymbol = generateWordToSymbol()
             let parenthesesSpace = generateParenthesis()
-            
+
+            /// Will parse the input expression and map to sepecific operation
             self.parser = ExpressionParser(expression: input,
                                            symbolsDict: wordToSymbol,
                                            parenthesisDict: parenthesesSpace,
@@ -46,7 +51,7 @@ private extension ExpressionHandler {
             
             let operatorSymbols = generateOperatorSymbol(wordSymbol: wordToSymbol)
             
-            // Tree structure
+            /// Tree structure.
             let tree = Tree()
             tree.contructATree(tokens: parsedString,
                                operatorSymbols: operatorSymbols,
@@ -56,7 +61,7 @@ private extension ExpressionHandler {
             let node = try tree.getRoot()
             let finalResult = try solveExpressionTree(node: node)
             return "\(finalResult)"
-        } catch (let exception) {
+        } catch (let exception) { /// Any exceptions while evaluation
             return exception.localizedDescription
         }
     }
@@ -82,12 +87,18 @@ private extension ExpressionHandler {
         }
         return solution
     }
-    
+
+    /*
+     Store mapped symbols to Set to ignore duplicates
+     **/
     func generateOperatorSymbol(wordSymbol: [String : String]) -> Set<String> {
         let values = Set(wordSymbol.values)
         return values
     }
-    
+
+    /*
+     This method will map operators to symbols in dictionary
+     **/
     func generateWordToSymbol() -> [String : String] {
         var dict: [String : String] = [:]
         dict["add"] = Constants.ADD
@@ -95,7 +106,10 @@ private extension ExpressionHandler {
         dict["exponent"] = Constants.EXPONENT
         return dict
     }
-    
+
+    /*
+     Here parenthesis and white space will be handled
+     **/
     func generateParenthesis(open: String = Constants.OPEN_PARENTHESIS,
                              close: String = Constants.CLOSE_PARENTHESIS,
                              delimiter: String = Constants.DELIMITER) -> [String : String] {
@@ -112,6 +126,7 @@ private extension ExpressionHandler {
 
 // MARK:- Constants
 private extension ExpressionHandler {
+    /// All the expression signs we are going to parse except operands
     struct Constants {
         static let ADD = "+"
         static let MULTIPLY = "*"

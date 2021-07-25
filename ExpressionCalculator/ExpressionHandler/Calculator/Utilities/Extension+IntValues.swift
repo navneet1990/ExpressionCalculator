@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
      func intValue() throws -> String  {
-        guard let value = Int(self) else{
+        guard let value = Int(self) else {
             throw CalculationError.invalidExpression
         }
         return "\(value)"
@@ -17,6 +17,7 @@ extension String {
 }
 
 extension Decimal {
+    /// Decimal to integer conversion
     var intValue: Int {
         return NSDecimalNumber(decimal: self).intValue
     }

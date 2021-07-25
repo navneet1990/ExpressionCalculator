@@ -38,14 +38,14 @@ class ExpressionParser {
 private extension ExpressionParser {
 
     func addSpaceAroundParenthese() {
-        self.parenthesisDict.forEach { (key,value) in
+        self.parenthesisDict.forEach {[unowned self] (key,value) in
             self.expression = self.expression.replacingOccurrences(of: key,
                                                                    with: value)
         }
     }
 
     func replaceWordsWithSymbols() {
-        self.symbolsDict.forEach { (key,value) in
+        self.symbolsDict.forEach {[unowned self] (key,value) in
             self.expression = self.expression.replacingOccurrences(of: key,
                                                                    with: value)
         }

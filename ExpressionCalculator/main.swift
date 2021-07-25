@@ -7,16 +7,24 @@
 
 import Foundation
 
+//MARK:- Begin the process
 func begin() {
+
+    /// Create the calculator expression handler object
     let calculator = ExpressionHandler()
 
     var initialArguments: String?
+
+    /// If user choose Expression calculator in console scheme, then predefined command line arguments will be used for first time
     #if CONSOLE
     let readPrompt = CommandLine.arguments
     let final = readPrompt.dropFirst().joined(separator: " ")
     initialArguments = final
     #endif
 
+    /* Will run as infinite loop, so that user dont have to quit the app to do any operation again.
+     For the first time user can directly add and evaluate the expression, after then user the press "y" to continue or any other key to finish the operation and exit
+     **/
     while true {
         var input: String
         if let arguments = initialArguments {
@@ -55,6 +63,10 @@ private func getInput() -> String {
     // 4
     return strData.trimmingCharacters(in: CharacterSet.newlines)
 }
+
+/*
+ Pass the Expression handler object as param, so that we dont have to initialize again and again.
+ **/
 private func calculate(_ cal: ExpressionHandler) {
     print("Please enter your exparession")
     let input = getInput()

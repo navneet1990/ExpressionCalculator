@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+/*
+ We will use tree data Structure, so Node class will be used
+ **/
 class Node {
 
     // MARK:- Variables
