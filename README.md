@@ -68,7 +68,7 @@ maintain integrity for ExpressionParser and Calculator contract.
 
  ## Running Example
  1. Please enter your expression
- 2. (add 5 + 10)
+ 2. (add 5 10)
  3. 15
  4. Please enter "y" to continue..
  
